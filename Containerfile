@@ -3,7 +3,7 @@ COPY build_files /
 
 FROM quay.io/fedora/fedora-bootc:44
 
-RUN rm /opt && mkdir /opt
+RUN rm -r /opt && mkdir /opt
 
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
